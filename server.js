@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const app = express();
+const app = express('../simpre-cc');
 const helmet = require('helmet');
 
 // Additional require statement
@@ -27,7 +27,7 @@ app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
 
-
+module.exports = app;
 
 // Use the record routes in the application
 app.use('/api/records', recordRoutes);
