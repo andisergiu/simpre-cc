@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 
-const timeRecordSchema = new mongoose.Schema({
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  punchIn: { type: Date, default: Date.now },
-  punchOut: { type: Date }
+const TimeRecordSchema = new mongoose.Schema({
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  timeIn: { type: Date, required: true },
+  timeOut: { type: Date }
 });
-
-module.exports = mongoose.model('TimeRecord', timeRecordSchema);
+module.exports = mongoose.model('TimeRecord', TimeRecordSchema);
